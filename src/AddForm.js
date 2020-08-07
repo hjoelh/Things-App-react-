@@ -2,10 +2,7 @@ import React from 'react';
 
 class AddTodo extends React.Component {
     state = {
-        content: ''
-
-
-
+        content: '',
     }
 
     handleChange = e => {
@@ -23,9 +20,15 @@ class AddTodo extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                <label>New Todo:</label> 
-                <input type="text" onChange={this.handleChange} value={this.state.content} />
+           
+                <input autoFocus placeholder='Add a thing' onChange={this.handleChange} value={this.state.content}  />
+
                 </form>
+
+              
+              
+
+                
             </div>
         )
     }
