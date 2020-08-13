@@ -5,7 +5,8 @@ const Todos = ({todos, deleteTodo, finished, finish}) => {
     const todoList = todos.length 
     ? (todos.map( todo => {
         return (
-        <div style={{backgroundImage: finished}} className='collection-item center-align' key={todo.id}>
+        <div style={{backgroundImage: finished}} className='collection-item center-align
+         animate__animated animate__bounceIn' key={todo.id}>
          <i onClick={finish} className="right material-icons">check</i>
          
          <i className="left material-icons" 
@@ -14,16 +15,13 @@ const Todos = ({todos, deleteTodo, finished, finish}) => {
 
           <span>{todo.content}</span> </div>)})) 
 
-    : (<p className='center'>No things left</p>  ) 
+    : (<p className='center'>No things left...</p>  ) 
 
 
     return (
         <div className='todos collection'>
 
         {todoList}
-
-    
-
 
         </div>
     )

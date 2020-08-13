@@ -3,6 +3,8 @@ body {
   font-family: 'Helvetica';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
 }
 
 code {
@@ -14,9 +16,34 @@ code {
 h1 {
   font-weight: bold;
   font-size: 4em;
+
 }
 
+.clearBtn {
+  background: black;
+  position: relative;
+  margin: 0px;
+ 
+  
+}
 
-.darkmode-layer, .darkmode-toggle {
-  z-index: 500;
+.clearBtnDiv {
+position: absolute;
+transform-origin: left;
+transform: scale(0.7);
+
+}
+
+.clearBtn:hover {
+  background-color: red !important
+}
+
+.collection .collection-item {
+  
+  border: 0.75px solid #000000 !important;
+
+}
+
+.collection {
+  border: none;
 }
