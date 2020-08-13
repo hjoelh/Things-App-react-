@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Todos = ({todos, deleteTodo, finishColor, finish}) => {
+const Todos = ({todos, deleteTodo, finish}) => {
     const todoList = todos.length 
     ? (todos.map( todo => {
         return (

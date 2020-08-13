@@ -5,12 +5,9 @@ import Clear from './clear.js'
 
 
 
-
-
 class App extends React.Component {
 
   state = {
-    finishColor: '',
     todos: [
       {id: 1, content: 'add some things'}
     ]}
@@ -56,7 +53,6 @@ class App extends React.Component {
     <Todos 
     todos={this.state.todos} 
     deleteTodo={this.deleteTodo} 
-    finished={this.state.finished} 
     finish={this.finish} 
      />
 

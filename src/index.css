@@ -3,8 +3,6 @@ body {
   font-family: 'Helvetica';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-
 }
 
 code {
@@ -15,23 +13,20 @@ code {
 
 h1 {
   font-weight: bold;
-  font-size: 4em;
+  font-size: 3.5em;
 
 }
 
 .clearBtn {
   background: black;
-  position: relative;
   margin: 0px;
- 
-  
 }
 
 .clearBtnDiv {
-position: absolute;
-transform-origin: left;
-transform: scale(0.7);
-
+  position: fixed ;
+  transform-origin: left;
+  transform: scale(0.7);
+  bottom: 15px;
 }
 
 .clearBtn:hover {
@@ -39,9 +34,8 @@ transform: scale(0.7);
 }
 
 .collection .collection-item {
-  
   border: 0.75px solid #000000 !important;
-
+  
 }
 
 .collection {
@@ -49,12 +43,18 @@ transform: scale(0.7);
 }
 
 
+
 p.noThings {
-  
   height: 42px;
   margin: 0;
   padding: 0;
   text-align: center;
   padding: 10px;
-  
+}
+
+.inputDiv {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: white
 }
