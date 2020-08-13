@@ -35,7 +35,7 @@ transform: scale(0.7);
 }
 
 .clearBtn:hover {
-  background-color: red !important
+  background-color: red
 }
 
 .collection .collection-item {
@@ -46,4 +46,15 @@ transform: scale(0.7);
 
 .collection {
   border: none;
+}
+
+
+p.noThings {
+  
+  height: 42px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  padding: 10px;
+  
 }

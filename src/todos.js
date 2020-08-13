@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-const Todos = ({todos, deleteTodo, finished, finish}) => {
+const Todos = ({todos, deleteTodo, finishColor, finish}) => {
     const todoList = todos.length 
     ? (todos.map( todo => {
         return (
-        <div style={{backgroundImage: finished}} className='collection-item center-align
-         animate__animated animate__bounceIn' key={todo.id}>
-         <i onClick={finish} className="right material-icons">check</i>
+        <div  className='collection-item center-align
+         animate__animated animate__bounceIn' key={todo.id} id={todo.id}>
+         <i onClick={ () => {finish(todo.id)}} className="right material-icons">check</i>
          
          <i className="left material-icons" 
          onClick={ () => {deleteTodo(todo.id)}}>close</i>  
@@ -15,7 +15,7 @@ const Todos = ({todos, deleteTodo, finished, finish}) => {
 
           <span>{todo.content}</span> </div>)})) 
 
-    : (<p className='center'>No things left...</p>  ) 
+    : (<p className='noThings'>No things left...</p>  ) 
 
 
     return (

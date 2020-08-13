@@ -10,7 +10,7 @@ import Clear from './clear.js'
 class App extends React.Component {
 
   state = {
-    finished: '',
+    finishColor: '',
     todos: [
       {id: 1, content: 'add some things'}
     ]}
@@ -31,15 +31,15 @@ class App extends React.Component {
 
   }
 
-    finish = () => {
-     this.setState ({finished: 'linear-gradient(90deg, rgba(0,200,219,1) 0%, rgba(0,255,158,1) 100%)'})
-  
+    finish = (id) => {
+      let todo = document.getElementById(id)
+      todo.setAttribute(
+      'style', 'background: linear-gradient(90deg, rgba(0,200,219,1) 0%, rgba(0,255,158,1) 100%')
   }
 
   deleteAll = (e) => {
     e.preventDefault()
     this.setState ({todos: []})
-    console.log(this.state.todos)
   }
 
 
