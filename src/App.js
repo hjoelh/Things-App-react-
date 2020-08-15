@@ -2,7 +2,6 @@ import React from 'react';
 import Todos from './todos.js'
 import AddTodo from './AddForm.js'
 import Clear from './clear.js'
-import DarkMode from './darkmode.js'
 
 
 class App extends React.Component {
@@ -65,9 +64,8 @@ class App extends React.Component {
     finish={this.finish} 
      />
 
-    <Clear  deleteAll={this.deleteAll} />
+    <Clear  deleteAll={this.deleteAll}  toggle={this.darkMode}/>
 
-    <DarkMode toggle={this.darkMode} />
 
  
     

@@ -5,6 +5,7 @@ class Clear extends React.Component {
 
     render(props) {
         return (
+
             <div className='clearBtnDiv'>
             <form className='clearForm' onSubmit={this.props.deleteAll}>
 
@@ -13,11 +14,14 @@ class Clear extends React.Component {
             </form>
 
 
+            <button 
+            className="waves-effect waves-red btn-small clearBtn"><i className="material-icons right">brightness_6</i>Dark Mode</button>
 
 
-            </div>
 
 
+
+</div>
         )
     }
 }
