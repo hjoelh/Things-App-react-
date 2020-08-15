@@ -1,4 +1,5 @@
 import React from 'react';
+ 
 
 class Clear extends React.Component {
 
@@ -11,7 +12,12 @@ class Clear extends React.Component {
             className="waves-effect waves-red btn-small clearBtn"><i className="material-icons left">delete_sweep</i>Clear all</button>
             </form>
 
+
+
+
             </div>
+
+
         )
     }
 }

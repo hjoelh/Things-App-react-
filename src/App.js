@@ -2,7 +2,7 @@ import React from 'react';
 import Todos from './todos.js'
 import AddTodo from './AddForm.js'
 import Clear from './clear.js'
-
+import DarkMode from './darkmode.js'
 
 
 class App extends React.Component {
@@ -39,14 +39,23 @@ class App extends React.Component {
     this.setState ({todos: []})
   }
 
+  darkMode = () => {
+    let dark = document.getElementById('darkSwitch')
+    dark.classList.toggle('darkMode')
+  }
+
+
+
 
 
 
   render () {
     return (
-    <div className="todo-app container">
+    <div className="todo-app">
 
     <h1 className='center animate__animated animate__tada'>Things.</h1>
+
+   
 
     <AddTodo addTodo={this.addTodo} />
 
@@ -57,12 +66,10 @@ class App extends React.Component {
      />
 
     <Clear  deleteAll={this.deleteAll} />
+
+    <DarkMode toggle={this.darkMode} />
+
  
-
-    
-  
-
-
     
 
     </div>
