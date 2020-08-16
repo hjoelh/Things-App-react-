@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Helvetica';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -7,6 +9,7 @@ body {
   max-width: 500px;
   margin-left:auto;
   margin-right:auto;
+  overflow: hidden;
 }
 
 .darkMode {
@@ -35,6 +38,8 @@ h1 {
   position: relative;
   background: white;
   z-index: 6;
+  margin: 0;
+  padding-top: 20px;
   
 }
 
@@ -53,7 +58,29 @@ h1 {
   margin: 0px;
 }
 
-.clearBtnDiv {
+
+
+.clearBtn:hover {
+  background-color: red
+}
+
+.darkBtn {
+    background: black;
+    margin: 0px;
+}
+
+
+.darkBtn:hover {
+  background: white;
+  color: black;
+  margin: 0px;
+}
+
+
+
+
+
+.Footer {
   background-color: white;
   display: flex;
   position: fixed;
@@ -63,14 +90,14 @@ h1 {
   max-width: 500px;
   margin-left:auto;
   margin-right:auto;
-  bottom: 25px
+  bottom: 0;
+  height: 75px;
+  overflow: hidden;
+  padding-top: 25px;
 }
 
 
 
-.clearBtn:hover {
-  background-color: red
-}
 
 .collection .collection-item {
   border: 0.75px solid #000000 !important;
@@ -79,14 +106,12 @@ h1 {
 
 .collection {
   border: none;
-  max-height: 60vh ;
+  max-width: 500px;
+   max-height: 65vh;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: auto; 
+ 
 }
-
-
-
-
 
 p.noThings {
   height: 42px;
@@ -101,4 +126,9 @@ p.noThings {
   top: 0;
   z-index: 5;
   background: white
+}
+
+
+i:hover {
+  cursor: pointer;
 }

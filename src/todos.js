@@ -24,6 +24,7 @@ const Todos = ({todos, deleteTodo, finish}) => {
         {todoList}
 
         </div>
+        
     )
 }
 
