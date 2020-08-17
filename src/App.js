@@ -8,8 +8,9 @@ class App extends React.Component {
 
   state = {
     todos: [
-      {id: 1, content: 'add some things'}
-    ]}
+      {id: 1, content: 'add some things'} ],
+    darkMode: false
+  }
 
   deleteTodo = (id) => {
     const todos = this.state.todos.filter(todo => {
@@ -39,12 +40,11 @@ class App extends React.Component {
     this.setState ({todos: []})
   }
 
-  darkMode = () => {
-    let dark = document.getElementById('darkSwitch')
-    dark.classList.toggle('darkMode')
-  }
-
-
+  toggleDark = () => {
+    this.setState ({
+     darkMode: !this.state.darkMode 
+    })
+   } 
 
 
 
@@ -65,11 +65,28 @@ class App extends React.Component {
      />
 
     <Footer 
-        deleteAll={this.deleteAll}  
-        toggle={this.darkMode}
+        deleteAll={this.deleteAll} 
+        toggle={this.toggleDark} 
       />
 
-    </div>
+      <div className={this.state.darkMode ? 'darkMode' : null}> </div> 
+
+
+
+
+      </div>
+
+
+
+
+
+      
+
+
+
+
+
+
 
 
     )

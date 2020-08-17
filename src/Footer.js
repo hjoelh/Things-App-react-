@@ -14,8 +14,8 @@ class Footer extends React.Component {
                     <i className="material-icons left">delete_sweep</i>Clear all</button>
                     </form>
 
-                    <button 
-                    className="waves-effect waves-red btn-small darkBtn">
+                    <button onClick={this.props.toggle}
+                    className="btn-small darkBtn">
                     <i className="material-icons right">brightness_6</i>Dark Mode</button>
 
                         </div>  )}}
