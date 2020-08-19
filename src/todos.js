@@ -6,7 +6,7 @@ const Todos = ({todos, deleteTodo, finish}) => {
     ? (todos.map( todo => {
         return (
         <div  className='collection-item center-align
-         animate__animated animate__bounceIn' key={todo.id} id={todo.id}>
+         animate__animated animate__bounceIn' key={todo.id} id={todo.id} > 
          <i onClick={ () => {finish(todo.id)}} className="right material-icons">check</i>
          
          <i className="left material-icons" 

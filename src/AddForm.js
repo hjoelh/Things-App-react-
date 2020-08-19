@@ -18,14 +18,19 @@ class AddTodo extends React.Component {
 
     render() {
         return (
-            <div className='inputDiv'>
+            <div className={this.props.darkMode ? 'inputDivDark' : 'inputDiv'}>
 
                 <form 
                        onSubmit={this.handleSubmit}>
            
                 <input autoFocus placeholder='Add a thing' 
                        onChange={this.handleChange} 
-                       value={this.state.content} />
+                       value={this.state.content} 
+
+                           
+                       />
+
+
 
                 </form>
 

@@ -9,7 +9,8 @@ class App extends React.Component {
   state = {
     todos: [
       {id: 1, content: 'add some things'} ],
-    darkMode: false
+    darkMode: false,
+    completed: true
   }
 
   deleteTodo = (id) => {
@@ -30,11 +31,26 @@ class App extends React.Component {
   }
 
   finish = (id) => {
-      let todo = document.getElementById(id)
-      todo.setAttribute(
-      'style', 'background: linear-gradient(90deg, rgba(0,200,219,1) 0%, rgba(0,255,158,1) 100%')
-  }
 
+      let todo = document.getElementById(id)
+
+      if (todo.style.background === '') {
+        todo.setAttribute(
+          'style', 'background: linear-gradient(90deg, rgba(0,200,219,1) 0%, rgba(0,255,158,1) 100%')
+      }
+
+      else {
+
+        todo.setAttribute(
+          'style', 'background: ""')
+
+      }
+    }
+
+
+  
+  
+ 
   deleteAll = (e) => {
     e.preventDefault()
     this.setState ({todos: []})
@@ -52,10 +68,12 @@ class App extends React.Component {
     return (
     <div className="todo-app">
 
-    <h1 className='center animate__animated animate__tada'>Things.</h1>
+    <h1 className={this.state.darkMode ? 'dark center animate__animated animate__tada' 
+    : 'center animate__animated animate__tada'} >Things.</h1>
 
     <AddTodo 
         addTodo={this.addTodo}
+        darkMode={this.state.darkMode}
      />
 
     <Todos 
@@ -67,9 +85,10 @@ class App extends React.Component {
     <Footer 
         deleteAll={this.deleteAll} 
         toggle={this.toggleDark} 
+        darkMode={this.state.darkMode}
       />
 
-      <div className={this.state.darkMode ? 'darkMode' : null}> </div> 
+      <div className={this.state.darkMode ? 'darkMode' : null} /> 
 
 
 

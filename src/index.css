@@ -1,3 +1,9 @@
+:root {
+  --animate-duration: 0s;
+  
+
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -9,7 +15,7 @@ body {
   max-width: 500px;
   margin: auto;
   overflow: hidden;
-  background: white;
+  background-color: white;
 }
 
 .darkMode {
@@ -21,7 +27,7 @@ body {
   left: 0;
   background: white;
   mix-blend-mode: difference;
-  z-index: 999 
+  z-index: ;
 }
 
 
@@ -37,11 +43,13 @@ h1 {
   font-size: 3.5em;
   position: relative;
   background: white;
-  z-index: 6;
+  z-index: 5;
   margin: 0;
   padding-top: 20px;
+  padding-bottom: 5px
   
 }
+
 
 
 .darkSwitch {
@@ -49,7 +57,6 @@ h1 {
   bottom: 22.5px;
   right: 50px;
  
-  
 
 }
 
@@ -94,6 +101,27 @@ h1 {
   height: 75px;
   overflow: hidden;
   padding-top: 25px;
+  z-index: 10;
+}
+
+
+
+.DarkFooter {
+  background-color: black;
+  color: black;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-content: center;
+  width:80%;
+  max-width: 500px;
+  margin-left:auto;
+  margin-right:auto;
+  bottom: 0;
+  height: 75px;
+  overflow: hidden;
+  padding-top: 25px;
+  z-index: 10;
 }
 
 
@@ -109,7 +137,7 @@ h1 {
   max-width: 500px;
    max-height: 65vh;
   overflow-x: hidden;
-  overflow-y: auto; 
+  overflow-y: auto;
  
 }
 
@@ -129,6 +157,27 @@ p.noThings {
 }
 
 
+
+.inputDivDark:value {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  color: white;
+  background: black;
+}
+
+
 i:hover {
   cursor: pointer;
+}
+
+
+span {
+  font-size: 1.2em;
+}
+
+
+.dark {
+  color: white;
+  background: black;
 }
