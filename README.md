@@ -1,1 +1,1 @@
-https://hjoelh.github.io/Things-App-react-/
+https://hjoelh.github.io/Things-App
