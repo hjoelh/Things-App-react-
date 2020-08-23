@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Things-App-react-/static/css/main.afbe6230.chunk.css",
-    "main.js": "/Things-App-react-/static/js/main.83dbc530.chunk.js",
-    "main.js.map": "/Things-App-react-/static/js/main.83dbc530.chunk.js.map",
-    "runtime-main.js": "/Things-App-react-/static/js/runtime-main.a13438e0.js",
-    "runtime-main.js.map": "/Things-App-react-/static/js/runtime-main.a13438e0.js.map",
-    "static/js/2.b5763d74.chunk.js": "/Things-App-react-/static/js/2.b5763d74.chunk.js",
-    "static/js/2.b5763d74.chunk.js.map": "/Things-App-react-/static/js/2.b5763d74.chunk.js.map",
-    "index.html": "/Things-App-react-/index.html",
-    "precache-manifest.bfb9a2393b9fb4b7bc344597eaa9d1a6.js": "/Things-App-react-/precache-manifest.bfb9a2393b9fb4b7bc344597eaa9d1a6.js",
-    "service-worker.js": "/Things-App-react-/service-worker.js",
-    "static/css/main.afbe6230.chunk.css.map": "/Things-App-react-/static/css/main.afbe6230.chunk.css.map",
-    "static/js/2.b5763d74.chunk.js.LICENSE.txt": "/Things-App-react-/static/js/2.b5763d74.chunk.js.LICENSE.txt"
+    "main.css": "/Things-App/static/css/main.1a0423bb.chunk.css",
+    "main.js": "/Things-App/static/js/main.3c0906c4.chunk.js",
+    "main.js.map": "/Things-App/static/js/main.3c0906c4.chunk.js.map",
+    "runtime-main.js": "/Things-App/static/js/runtime-main.b23f632f.js",
+    "runtime-main.js.map": "/Things-App/static/js/runtime-main.b23f632f.js.map",
+    "static/js/2.b5763d74.chunk.js": "/Things-App/static/js/2.b5763d74.chunk.js",
+    "static/js/2.b5763d74.chunk.js.map": "/Things-App/static/js/2.b5763d74.chunk.js.map",
+    "index.html": "/Things-App/index.html",
+    "precache-manifest.56342b5b001f5583e5783c9683ecd1b7.js": "/Things-App/precache-manifest.56342b5b001f5583e5783c9683ecd1b7.js",
+    "service-worker.js": "/Things-App/service-worker.js",
+    "static/css/main.1a0423bb.chunk.css.map": "/Things-App/static/css/main.1a0423bb.chunk.css.map",
+    "static/js/2.b5763d74.chunk.js.LICENSE.txt": "/Things-App/static/js/2.b5763d74.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a13438e0.js",
+    "static/js/runtime-main.b23f632f.js",
     "static/js/2.b5763d74.chunk.js",
-    "static/css/main.afbe6230.chunk.css",
-    "static/js/main.83dbc530.chunk.js"
+    "static/css/main.1a0423bb.chunk.css",
+    "static/js/main.3c0906c4.chunk.js"
   ]
 }
