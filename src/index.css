@@ -27,7 +27,6 @@ body {
   left: 0;
   background: white;
   mix-blend-mode: difference;
-  z-index: ;
 }
 
 
@@ -181,3 +180,11 @@ span {
   color: white;
   background: black;
 }
+
+
+button:focus {
+  background-color:  unset !important
+}
+
+
+  

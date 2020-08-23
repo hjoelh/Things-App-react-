@@ -10,7 +10,6 @@ class App extends React.Component {
     todos: [
       {id: 1, content: 'add some things'} ],
     darkMode: false,
-    completed: true
   }
 
   deleteTodo = (id) => {
@@ -47,9 +46,6 @@ class App extends React.Component {
       }
     }
 
-
-  
-  
  
   deleteAll = (e) => {
     e.preventDefault()
@@ -89,9 +85,6 @@ class App extends React.Component {
       />
 
       <div className={this.state.darkMode ? 'darkMode' : null} /> 
-
-
-
 
       </div>
 
