@@ -5,12 +5,11 @@ import Footer from './components/Footer.js'
 
 class App extends React.Component {
 
-
 state = {
 	todos: [{
   	id: 1, 
-    content: 'add some things' }],
-
+		content: 'add some things',
+	  completed: false }],
     darkMode: false 
     }
 
@@ -25,7 +24,6 @@ componentDidMount() {
 	const items1 = JSON.parse(json1)
 	this.setState ({darkMode: items1})	
 }
-
 
 componentDidUpdate() {
 
@@ -47,23 +45,28 @@ deleteTodo = (id) => {
 
   addTodo = (todo) => {
     if (todo.content !== '') {
-    	todo.id = Math.random()
+			todo.id = Math.random()
+			todo.completed = false;
       let todos = [...this.state.todos, todo];
       this.setState({todos: todos})
     }
   }
+  
+	finish = (t) => {
+		let tid = document.getElementById(t.id)
+		if (tid.style.background === '') {
+			tid.setAttribute(
+				'style', 'background: linear-gradient(90deg, rgba(0,200,219,1) 0%, rgba(0,255,158,1) 100%')
+		}
+		else {
+			tid.setAttribute(
+				'style', 'background: ""')
+		}
+	}
 
-  finish = (id) => {
-      let todo = document.getElementById(id)
-      if (todo.style.background === '') {
-        todo.setAttribute(
-          'style', 'background: linear-gradient(90deg, rgba(0,200,219,1) 0%, rgba(0,255,158,1) 100%')
-      }
-      else {
-        todo.setAttribute(
-          'style', 'background: ""')
-      }
-    }
+		
+
+		
 
  
   deleteAll = (e) => {
@@ -116,18 +119,3 @@ deleteTodo = (id) => {
 }
 
 export default App;
-
-
-
-/*  React.useEffect( () => {
-        const data = localStorage.getItem('todos');
-        if (data) {
-            
-        }
-    }, [] )
-
-
-    React.useEffect( () => {
-        localStorage.setItem('todos', JSON.stringify(props.todos))
-    })
- */
