@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/Things-App/static/css/main.1a0423bb.chunk.css",
-    "main.js": "/Things-App/static/js/main.3c0906c4.chunk.js",
-    "main.js.map": "/Things-App/static/js/main.3c0906c4.chunk.js.map",
+    "main.css": "/Things-App/static/css/main.d9f726b7.chunk.css",
+    "main.js": "/Things-App/static/js/main.b93d2439.chunk.js",
+    "main.js.map": "/Things-App/static/js/main.b93d2439.chunk.js.map",
     "runtime-main.js": "/Things-App/static/js/runtime-main.b23f632f.js",
     "runtime-main.js.map": "/Things-App/static/js/runtime-main.b23f632f.js.map",
-    "static/js/2.b5763d74.chunk.js": "/Things-App/static/js/2.b5763d74.chunk.js",
-    "static/js/2.b5763d74.chunk.js.map": "/Things-App/static/js/2.b5763d74.chunk.js.map",
+    "static/js/2.8d28352e.chunk.js": "/Things-App/static/js/2.8d28352e.chunk.js",
+    "static/js/2.8d28352e.chunk.js.map": "/Things-App/static/js/2.8d28352e.chunk.js.map",
     "index.html": "/Things-App/index.html",
-    "precache-manifest.56342b5b001f5583e5783c9683ecd1b7.js": "/Things-App/precache-manifest.56342b5b001f5583e5783c9683ecd1b7.js",
+    "precache-manifest.d895fb697fa59d926ed398186e12880e.js": "/Things-App/precache-manifest.d895fb697fa59d926ed398186e12880e.js",
     "service-worker.js": "/Things-App/service-worker.js",
-    "static/css/main.1a0423bb.chunk.css.map": "/Things-App/static/css/main.1a0423bb.chunk.css.map",
-    "static/js/2.b5763d74.chunk.js.LICENSE.txt": "/Things-App/static/js/2.b5763d74.chunk.js.LICENSE.txt"
+    "static/css/main.d9f726b7.chunk.css.map": "/Things-App/static/css/main.d9f726b7.chunk.css.map",
+    "static/js/2.8d28352e.chunk.js.LICENSE.txt": "/Things-App/static/js/2.8d28352e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b23f632f.js",
-    "static/js/2.b5763d74.chunk.js",
-    "static/css/main.1a0423bb.chunk.css",
-    "static/js/main.3c0906c4.chunk.js"
+    "static/js/2.8d28352e.chunk.js",
+    "static/css/main.d9f726b7.chunk.css",
+    "static/js/main.b93d2439.chunk.js"
   ]
 }
