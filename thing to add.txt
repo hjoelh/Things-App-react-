@@ -1,0 +1,12 @@
+- dont allow empty things ✅
+- dark mode ✅
+- click again to clear completed task ✅
+- fix scale ✅
+- add local storage (tasks, darkMode) ✅
+
+
+- localStorage for completed tasks
+
+
+
+

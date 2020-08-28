@@ -5,6 +5,7 @@ import Footer from './components/Footer.js'
 
 class App extends React.Component {
 
+
 state = {
 	todos: [{
   	id: 1, 
@@ -12,6 +13,29 @@ state = {
 
     darkMode: false 
     }
+
+componentDidMount() {
+
+	const json = localStorage.getItem('todos')
+	if (json !== null) {
+		const items = JSON.parse(json)
+		this.setState ({todos: items} ) 
+}
+	const json1 = localStorage.getItem('darkMode')
+	const items1 = JSON.parse(json1)
+	this.setState ({darkMode: items1})	
+}
+
+
+componentDidUpdate() {
+
+	const json = JSON.stringify(this.state.todos)
+	localStorage.setItem('todos', json)
+
+	const json1 = JSON.stringify(this.state.darkMode)
+	localStorage.setItem('darkMode', json1)
+}
+
 
 deleteTodo = (id) => {
     const todos = this.state.todos.filter(todo => 
@@ -92,3 +116,18 @@ deleteTodo = (id) => {
 }
 
 export default App;
+
+
+
+/*  React.useEffect( () => {
+        const data = localStorage.getItem('todos');
+        if (data) {
+            
+        }
+    }, [] )
+
+
+    React.useEffect( () => {
+        localStorage.setItem('todos', JSON.stringify(props.todos))
+    })
+ */

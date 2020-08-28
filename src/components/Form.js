@@ -1,42 +1,38 @@
 import React from 'react';
 
-class AddTodo extends React.Component {
+const AddTodo  = (props) => {
 
-state = {
-    content: '',
-    }
- 
-handleChange = e => {
-    this.setState({content: e.target.value})
-    }
+const [content, setContent] = React.useState('')
 
-handleSubmit = e => {
-    e.preventDefault();
-    this.props.addTodo(this.state);
-    this.setState({content: ''})
-    }
+    const handleChange = e => {
+        setContent(e.target.value)
+        }
+    
+    const handleSubmit = e => {
+        e.preventDefault();
+        props.addTodo({content});
+        setContent('')
+        }
 
-
-render() {
     return (
         <div className={
-            this.props.darkMode 
+            props.darkMode 
             ? 'inputDivDark' 
             : 'inputDiv'     }>
 
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={handleSubmit}>
 
             <input 
                 autoFocus placeholder='Add a thing' 
-                onChange={this.handleChange} 
-                value={this.state.content} 
+                onChange={handleChange} 
+                value={content} 
                 />
 
             </form>
 
             </div>
-        )
-    }
+      );
 }
+
 
 export default AddTodo;

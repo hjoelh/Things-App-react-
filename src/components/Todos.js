@@ -2,7 +2,7 @@ import React from 'react';
 
 const Todos = (props) => {
 
-    const todoList = props.todos.length
+    const todoList = props.todos
     ? (props.todos.map( todo => {
         return (
         <div  
@@ -18,7 +18,8 @@ const Todos = (props) => {
 
             <span>{todo.content}</span> </div>)})) 
 
-    : (<p className='noThings'>No things left...</p>) 
+    : (<p className='noThings'>No things left...</p>)
+
 
 return (
     <div className='todos collection'>
