@@ -3,6 +3,9 @@ import Todos from './components/Todos.js'
 import AddTodo from './components/Form.js'
 import Footer from './components/Footer.js'
 
+import Login from './components/Login.js';
+
+
 class App extends React.Component {
 
 state = {
@@ -63,11 +66,6 @@ deleteTodo = (id) => {
 				'style', 'background: ""')
 		}
 	}
-
-		
-
-		
-
  
   deleteAll = (e) => {
     e.preventDefault()
@@ -85,6 +83,8 @@ deleteTodo = (id) => {
     return (
     <div className="todo-app">
 
+    <Login />
+
     <h1 className={
       this.state.darkMode 
         ? 'dark center animate__animated animate__tada' 
@@ -101,6 +101,8 @@ deleteTodo = (id) => {
       deleteTodo={this.deleteTodo} 
       finish={this.finish} 
      />
+
+
 
     <Footer 
       deleteAll={this.deleteAll} 

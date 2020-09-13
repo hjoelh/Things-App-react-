@@ -179,8 +179,44 @@ span {
   background: black;
 }
 
+.loginBtnDiv {
+  text-align: center;
+  position: fixed;
+  width:80%;
+  max-width: 500px;
+  margin-left:auto;
+  margin-right:auto;
+  bottom: 22.5px;
+  z-index: 11;
+  pointer-events: none;
+}
 
+.formOnly {
+  background: black;
+  color: white;
+  margin: auto;
+  overflow: hidden;
+  padding: 25px;
+  margin: 25px;
+  border-radius: 10px;
+  pointer-events: all;
 
+}
 
-
+.loginForm {
+  color: white;
+ 
   
+}
+
+.signBtn {
+  background: linear-gradient(90deg, rgba(0,200,219,1) 0%, rgba(0,255,158,1) 100%);
+  transition: 1s;
+  pointer-events: all
+};
+
+.signBtn:hover {
+  background: red
+};
+
+
