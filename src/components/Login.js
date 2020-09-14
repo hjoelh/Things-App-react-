@@ -10,15 +10,12 @@ const Login = (props) => {
         firebase.initializeApp(Fbconfig);
     }
 
-    firebase.firestore().collection('things').get().then(ans => console.log(ans.docs))
-    
-
     const [username, setUsername] = useState('')
     const [pass, setPass] = useState('')
     const [showForm, setShowForm] = useState(false)
     const [placeHolder, setPlaceHolder] = useState('email')
     const [passPlaceHolder, setPassPlaceHolder] = useState('password')
-    const [loggedIn, setLoggedIn] = useState(   firebase.auth().onAuthStateChanged(user => {
+    const [loggedIn, setLoggedIn] = useState(firebase.auth().onAuthStateChanged(user => {
         if (user) {
             setLoggedIn(true)
             setPlaceHolder('Signed in')
@@ -29,6 +26,10 @@ const Login = (props) => {
         }
     })
 )
+    
+
+                
+
 
     const signIn = e => {
         e.preventDefault()

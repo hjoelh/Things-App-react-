@@ -1,10 +1,17 @@
 import React from 'react';
+import * as firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
 
 const Todos = (props) => {
+    
 
-    React.useEffect( () => {
-        
+    firebase.auth().onAuthStateChanged(user => {
+        if (user) {
+            firebase.firestore().collection('things').doc(user.uid).onSnapshot(ans => {console.log(ans.data())})
+        }
     })
+
 
     const todoList = props.todos
     ? (props.todos.map( todo => {
