@@ -20,6 +20,7 @@ const Login = (props) => {
             setLoggedIn(true)
             setPlaceHolder('Signed in')
             setPassPlaceHolder(user.email)
+           
         }
         else {
             setLoggedIn(false)
@@ -27,10 +28,6 @@ const Login = (props) => {
     })
 )
     
-
-                
-
-
     const signIn = e => {
         e.preventDefault()
         firebase.auth().signInWithEmailAndPassword(username, pass)
@@ -76,11 +73,14 @@ const Login = (props) => {
                     firebase.auth().signOut()
             
                     .then( () => {
+                       
                         setLoggedIn(false)
                         setUsername('');
                         setPass('');
                         setPlaceHolder('email')
                         setPassPlaceHolder('password')
+                    
+
                     })
             
                     .catch(function(error) {
@@ -117,26 +117,18 @@ const Login = (props) => {
 
         return (
             <div className='loginBtnDiv'>
-
             <form onSubmit={signIn}>
                 <div className="formOnly">
-            
-                <input style={{color: 'white'}} placeholder={placeHolder} className='formInput' type="email" value={username} onChange={handleChangeUser} required/>
-            
-                <input style={{color: 'white'}} placeholder={passPlaceHolder} className='formInput' type="password" value={pass} onChange={handleChangePass} required/>
-
-                {loggedIn ? <button onClick={signOut} className='signBtn btn-small darkBtn' style={{marginTop: '15px'}}>Sign Out</button>
-                          : <button onClick={signUp} className='signBtn btn-small darkBtn' style={{marginTop: '15px'}}>Create Account</button> }
-    
+                    <input style={{color: 'white'}} placeholder={placeHolder} className='formInput' type="email" value={username} onChange={handleChangeUser} required/>
+                    <input style={{color: 'white'}} placeholder={passPlaceHolder} className='formInput' type="password" value={pass} onChange={handleChangePass} required/>
+                    {loggedIn ? <button onClick={signOut} className='signBtn btn-small darkBtn' style={{marginTop: '15px'}}>Sign Out</button>
+                              : <button onClick={signUp} className='signBtn btn-small darkBtn' style={{marginTop: '15px'}}>Create Account</button> }
                 </div>
-
                 <button onClick={toggleForm} className='signBtn btn-small darkBtn'>{loggedIn ? 'Logged in' : 'Sign in'}</button>
-                
             </form>    
             </div>  
         );
     }
-    
         else {
             return ( 
                 <div className='loginBtnDiv'>
@@ -144,7 +136,6 @@ const Login = (props) => {
                 </div>  
         )
     }
-
 }
  
 export default Login;
