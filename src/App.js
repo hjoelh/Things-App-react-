@@ -10,10 +10,7 @@ import "firebase/firestore";
 class App extends React.Component {
   
 state = {
-	todos: [{
-  	id: 1, 
-		content: 'add some things',
-	  completed: false }],
+	todos: [],
     darkMode: false,
     loggedIn: false,
     uid: ''
@@ -21,14 +18,19 @@ state = {
 
   componentDidMount() {
 
+
+    // if (this.state.todos === []) {
+    //   console.log('yoo')
+    // }
+
 // 	const json = localStorage.getItem('todos')
 // 	if (json !== null) {
 // 		const items = JSON.parse(json)
 // 		this.setState ({todos: items} ) 
 // }
-// 	const json1 = localStorage.getItem('darkMode')
-// 	const items1 = JSON.parse(json1)
-//   this.setState ({darkMode: items1})	
+	const json1 = localStorage.getItem('darkMode')
+	const items1 = JSON.parse(json1)
+  this.setState ({darkMode: items1})	
   
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
@@ -53,19 +55,16 @@ state = {
   }
 
   componentDidUpdate() {
-
 	// const json = JSON.stringify(this.state.todos)
 	// localStorage.setItem('todos', json)
 
-	// const json1 = JSON.stringify(this.state.darkMode)
-  // localStorage.setItem('darkMode', json1)
-
-
+	const json1 = JSON.stringify(this.state.darkMode)
+  localStorage.setItem('darkMode', json1)
   }
 
   deleteTodo = (id) => {
-    const todos = this.state.todos.filter(todo => 
-    	{return todo.id !== id} )
+    const todos = this.state.todos.filter(todo => {
+      return todo.id !== id} )
     this.setState({
     	todos
     })
@@ -77,13 +76,15 @@ state = {
   addTodo = (todo) => {
     if (todo.content !== '') {
 			todo.id = Math.random()
-			todo.completed = false;
+      todo.completed = false;
+      
+
       let todos = [...this.state.todos, todo];
       this.setState({todos: todos})
 
       firebase.firestore().collection('things').doc(this.state.uid).update({
                 content: todos
-            })
+                })
 
 
 
@@ -91,20 +92,26 @@ state = {
   }
   
   finish = (t) => {
-		let tid = document.getElementById(t.id)
-		if (tid.style.background === '') {
-			tid.setAttribute(
-				'style', 'background: linear-gradient(90deg, rgba(0,200,219,1) 0%, rgba(0,255,158,1) 100%')
-		}
-		else {
-			tid.setAttribute(
-				'style', 'background: ""')
-		}
+    for (let i = 0; i < this.state.todos.length; i++) {
+      if (t.id === this.state.todos[i].id) {
+        let newState = [...this.state.todos]
+        newState[i].completed = !newState[i].completed
+          this.setState({newState})
+
+          firebase.firestore().collection('things').doc(this.state.uid).update({
+            content: newState
+            })
+      }
+    }
 	}
  
   deleteAll = (e) => {
     e.preventDefault()
     this.setState ({todos: []})
+      firebase.firestore().collection('things').doc(this.state.uid).update({
+        content: []
+    })
+      
   }
 
   toggleDark = () => {
@@ -113,7 +120,6 @@ state = {
     })
   } 
 
-    
   render () {
     return (
     <div className="todo-app">

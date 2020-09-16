@@ -3,9 +3,16 @@
 - click again to clear completed task ✅
 - fix scale ✅
 - add local storage (tasks, darkMode) ✅
+- add user accounts  ✅
+- store user things in firestore  ✅
+- load user things at startup if logged in ✅
 
 
-- localStorage for completed tasks
+- include thing completetion in firestore
+- setup firestore security rules
+- animations / transitions
+
+
 
 
 
