@@ -74,16 +74,23 @@ const Login = (props) => {
                   });
     }
 
+    const clearOnSignOut = (e) => {
+        e.preventDefault()
+        props.clearOnSignOut()
+    }
+
     const signOut = e => {
                     e.preventDefault()
-                    firebase.auth().signOut()
+                    clearOnSignOut(e)
 
+                    firebase.auth().signOut()
                     .then( () => {
                         setLoggedIn(false)
                         setUsername('');
                         setPass('');
                         setPlaceHolder('email')
                         setPassPlaceHolder('password')
+                        toggleFormAlways();
                     })
 
                     .catch( (error) => {

@@ -191,6 +191,18 @@ span {
   pointer-events: none;
 }
 
+@media (max-width: 500px) {
+  .loginBtnDiv {
+    position: static;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 11;
+    width: 100%;
+    pointer-events: none;
+  }
+}
+
 .formOnly {
   background: black;
   color: white;

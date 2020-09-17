@@ -118,6 +118,10 @@ state = {
       
   }
 
+  clearOnSignOut = () => {
+    this.setState ({todos: []})  
+  }
+
   toggleDark = () => {
     this.setState ({
      darkMode: !this.state.darkMode 
@@ -130,7 +134,8 @@ state = {
     
     <Login todos={this.state.todos}
             isLoggedIn={this.state.loggedIn}
-            uid={this.state.uid} />
+            uid={this.state.uid}
+            clearOnSignOut={this.clearOnSignOut} />
 
     <h1 className={
       this.state.darkMode 

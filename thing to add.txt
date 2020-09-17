@@ -7,7 +7,11 @@
 - store user things in firestore  ✅
 - load user things at startup if logged in ✅
 - include thing completetion in firestore ✅
+- mobile media query ✅
 
+
+- add margin to sign in form 
+- chrome only error
 - footer buttons are not centererd
 - sign out > clears the things 
 - setup firestore security rules
