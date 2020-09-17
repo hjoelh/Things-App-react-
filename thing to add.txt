@@ -6,9 +6,10 @@
 - add user accounts  ✅
 - store user things in firestore  ✅
 - load user things at startup if logged in ✅
+- include thing completetion in firestore ✅
 
-
-- include thing completetion in firestore
+- footer buttons are not centererd
+- sign out > clears the things 
 - setup firestore security rules
 - animations / transitions
 

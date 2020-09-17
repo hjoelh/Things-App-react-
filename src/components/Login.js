@@ -53,11 +53,17 @@ const Login = (props) => {
         e.preventDefault()
         firebase.auth().createUserWithEmailAndPassword(username, pass)
 
-        .then( () => {
+        .then (cred => {
             setUsername('');
             setPass('');
             setPlaceHolder('Account created.')
             console.log('account succesfully created')
+
+            firebase.firestore().collection('things').doc(cred.user.uid).set({
+                newUser: 'test'
+            })
+
+
         })
 
         .catch(function(error) {
@@ -71,24 +77,21 @@ const Login = (props) => {
     const signOut = e => {
                     e.preventDefault()
                     firebase.auth().signOut()
-            
+
                     .then( () => {
-                       
                         setLoggedIn(false)
                         setUsername('');
                         setPass('');
                         setPlaceHolder('email')
                         setPassPlaceHolder('password')
-                    
-
                     })
-            
-                    .catch(function(error) {
+
+                    .catch( (error) => {
                         setUsername('');
                         setPass('');
-                                console.log(error.code, error.message);
-                                setPlaceHolder(error.message, error.code);
-                              });
+                        console.log(error.code, error.message);
+                        setPlaceHolder(error.message, error.code);
+                    });
     }             
 
     const handleChangeUser = e => {

@@ -8,7 +8,7 @@ import "firebase/auth";
 import "firebase/firestore";
 
 class App extends React.Component {
-  
+
 state = {
 	todos: [],
     darkMode: false,
@@ -47,9 +47,10 @@ state = {
 
   const thenn = () => {
     firebase.firestore().collection('things').doc(this.state.uid).get().then(snap => {
+      if(snap.data().content !== undefined) {
       this.setState({todos:
         snap.data().content
-    })
+    })}
     })
   }
   }
@@ -68,9 +69,10 @@ state = {
     this.setState({
     	todos
     })
+    if (this.state.uid) {
     firebase.firestore().collection('things').doc(this.state.uid).update({
-      content: todos
-  })
+      content: todos 
+  }) }
   }
 
   addTodo = (todo) => {
@@ -82,11 +84,11 @@ state = {
       let todos = [...this.state.todos, todo];
       this.setState({todos: todos})
 
+      if (this.state.uid) {
       firebase.firestore().collection('things').doc(this.state.uid).update({
                 content: todos
-                })
-
-
+              })
+      }
 
     }
   }
@@ -108,9 +110,11 @@ state = {
   deleteAll = (e) => {
     e.preventDefault()
     this.setState ({todos: []})
+
+    if (this.state.uid) {
       firebase.firestore().collection('things').doc(this.state.uid).update({
         content: []
-    })
+    }) } 
       
   }
 
