@@ -61,6 +61,12 @@ state = {
 
 	const json1 = JSON.stringify(this.state.darkMode)
   localStorage.setItem('darkMode', json1)
+
+
+  
+    
+
+
   }
 
   deleteTodo = (id) => {
@@ -119,7 +125,10 @@ state = {
   }
 
   clearOnSignOut = () => {
-    this.setState ({todos: []})  
+    this.setState ({
+      todos: [],
+      uid: ''
+    })  
   }
 
   toggleDark = () => {

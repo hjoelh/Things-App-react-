@@ -8,13 +8,12 @@
 - load user things at startup if logged in ✅
 - include thing completetion in firestore ✅
 - mobile media query ✅
+- sign out > clears the things  ✅
 
 
 - add margin to sign in form 
 - chrome only error
-- footer buttons are not centererd
-- sign out > clears the things 
-- setup firestore security rules
+- footer buttons are not centererd ish
 - animations / transitions
 
 
