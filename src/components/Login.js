@@ -20,7 +20,6 @@ const Login = (props) => {
             setLoggedIn(true)
             setPlaceHolder('Signed in')
             setPassPlaceHolder(user.email)
-           
         }
         else {
             setLoggedIn(false)
@@ -32,7 +31,7 @@ const Login = (props) => {
         e.preventDefault()
         firebase.auth().signInWithEmailAndPassword(username, pass)
 
-        .then( cred => {
+        .then(cred => {
             setUsername('');
             setPass('');
             setPlaceHolder('Signed in');
@@ -62,8 +61,6 @@ const Login = (props) => {
             firebase.firestore().collection('things').doc(cred.user.uid).set({
                 newUser: 'test'
             })
-
-
         })
 
         .catch(function(error) {
@@ -92,7 +89,6 @@ const Login = (props) => {
                         setPassPlaceHolder('password')
                         toggleFormAlways();
                     })
-
                     .catch( (error) => {
                         setUsername('');
                         setPass('');
@@ -124,7 +120,6 @@ const Login = (props) => {
     
     
     if (showForm === true) {
-
         return (
             <div className='loginBtnDiv'>
             <form onSubmit={signIn}>

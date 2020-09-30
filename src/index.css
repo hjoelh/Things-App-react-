@@ -27,14 +27,6 @@ body {
   mix-blend-mode: difference;
 }
 
-
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
 h1 {
   font-weight: bold;
   font-size: 3.5em;
@@ -44,25 +36,18 @@ h1 {
   margin: 0;
   padding-top: 20px;
   padding-bottom: 5px
-  
 }
-
-
 
 .darkSwitch {
   position: fixed;
   bottom: 22.5px;
   right: 50px;
- 
-
 }
 
 .clearBtn {
   background: black;
   margin: 0px;
 }
-
-
 
 .clearBtn:hover {
   background-color: red
@@ -73,16 +58,11 @@ h1 {
     margin: 0px;
 }
 
-
 .darkBtn:hover {
   background: white;
   color: black;
   margin: 0px;
 }
-
-
-
-
 
 .Footer {
   background-color: white;
@@ -90,7 +70,7 @@ h1 {
   position: fixed;
   justify-content: space-between;
   align-content: center;
-  width:80%;
+  width: 80%;
   max-width: 500px;
   margin-left:auto;
   margin-right:auto;
@@ -100,8 +80,6 @@ h1 {
   padding-top: 25px;
   z-index: 10;
 }
-
-
 
 .DarkFooter {
   background-color: black;
@@ -121,12 +99,8 @@ h1 {
   z-index: 10;
 }
 
-
-
-
 .collection .collection-item {
   border: 0.75px solid #000000 !important;
-  
 }
 
 .collection {
@@ -135,7 +109,6 @@ h1 {
    max-height: 65vh;
   overflow-x: hidden;
   overflow-y: auto;
- 
 }
 
 p.noThings {
@@ -153,8 +126,6 @@ p.noThings {
   background: white
 }
 
-
-
 .inputDivDark:value {
   position: sticky;
   top: 0;
@@ -163,16 +134,13 @@ p.noThings {
   background: black;
 }
 
-
 i:hover {
   cursor: pointer;
 }
 
-
 span {
   font-size: 1.2em;
 }
-
 
 .dark {
   color: white;
@@ -212,13 +180,10 @@ span {
   margin: 25px;
   border-radius: 10px;
   pointer-events: all;
-
 }
 
 .loginForm {
   color: white;
- 
-  
 }
 
 .signBtn {

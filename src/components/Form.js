@@ -1,7 +1,6 @@
 import React from 'react';
 
 const AddTodo  = (props) => {
-
 const [content, setContent] = React.useState('')
 
     const handleChange = e => {
@@ -18,21 +17,15 @@ const [content, setContent] = React.useState('')
         <div className={
             props.darkMode 
             ? 'inputDivDark' 
-            : 'inputDiv'     }>
-
+            : 'inputDiv'}>
             <form onSubmit={handleSubmit}>
-
             <input 
                 autoFocus placeholder='Add a thing' 
                 onChange={handleChange} 
                 value={content} 
                 />
-
             </form>
-
             </div>
       );
 }
-
-
 export default AddTodo;

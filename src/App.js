@@ -14,20 +14,9 @@ state = {
     darkMode: false,
     loggedIn: false,
     uid: ''
-    }
+}
 
   componentDidMount() {
-
-
-    // if (this.state.todos === []) {
-    //   console.log('yoo')
-    // }
-
-// 	const json = localStorage.getItem('todos')
-// 	if (json !== null) {
-// 		const items = JSON.parse(json)
-// 		this.setState ({todos: items} ) 
-// }
 	const json1 = localStorage.getItem('darkMode')
 	const items1 = JSON.parse(json1)
   this.setState ({darkMode: items1})	
@@ -35,7 +24,6 @@ state = {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
         this.setState({uid: user.uid})
-        console.log(this.state.uid)
         console.log('logged in')
         thenn()
     }
@@ -48,33 +36,24 @@ state = {
   const thenn = () => {
     firebase.firestore().collection('things').doc(this.state.uid).get().then(snap => {
       if(snap.data().content !== undefined) {
-      this.setState({todos:
+        this.setState({todos:
         snap.data().content
     })}
     })
-  }
+    }
   }
 
   componentDidUpdate() {
-	// const json = JSON.stringify(this.state.todos)
-	// localStorage.setItem('todos', json)
-
-	const json1 = JSON.stringify(this.state.darkMode)
-  localStorage.setItem('darkMode', json1)
-
-
-  
-    
-
-
+	  const json1 = JSON.stringify(this.state.darkMode)
+    localStorage.setItem('darkMode', json1)
   }
 
   deleteTodo = (id) => {
     const todos = this.state.todos.filter(todo => {
-      return todo.id !== id} )
-    this.setState({
-    	todos
-    })
+      return todo.id !== id} 
+      )
+        this.setState({todos})
+
     if (this.state.uid) {
     firebase.firestore().collection('things').doc(this.state.uid).update({
       content: todos 
@@ -85,8 +64,6 @@ state = {
     if (todo.content !== '') {
 			todo.id = Math.random()
       todo.completed = false;
-      
-
       let todos = [...this.state.todos, todo];
       this.setState({todos: todos})
 
@@ -95,7 +72,6 @@ state = {
                 content: todos
               })
       }
-
     }
   }
   
@@ -141,7 +117,7 @@ state = {
     return (
     <div className="todo-app">
     
-    <Login todos={this.state.todos}
+    <Login  todos={this.state.todos}
             isLoggedIn={this.state.loggedIn}
             uid={this.state.uid}
             clearOnSignOut={this.clearOnSignOut} />
