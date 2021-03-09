@@ -9,18 +9,8 @@
 - include thing completetion in firestore ✅
 - mobile media query ✅
 - sign out > clears the things  ✅
-
-
-- add margin to sign in form 
-- chrome only error
-- footer buttons are not centererd ish
-- animations / transitions
-
-
-
-
-
-
-
-
-//  "homepage": "https://hjoelh.github.io/Things-App",
+- swap to mongo /realm✅
+- custom hooks ✅
+- swap to styled components ✅
+- add react-confetti
+- secure mongo

@@ -1,31 +1,72 @@
-import React from 'react';
+import React from "react";
+import styled from "styled-components";
+import { MdClose, MdDone } from "react-icons/md";
 
-const Todos = (props) => {
+export default function Todos({ todos, markCompleted, deleteTodo }) {
+  if (todos.length >= 1) {
+    return (
+      <ListWrap>
+        {todos.map((todo) => (
+          <Item key={todo.key} id={todo.id} completed={todo.completed}>
+            <Icon left>
+              <MdClose onClick={() => deleteTodo(todo.key)} />
+            </Icon>
 
-    const todoList = props.todos
-    ? (props.todos.map( todo => {
-        return (
-        <div  
-            className='collection-item center-align animate__animated animate__bounceIn' 
-            key={todo.id} 
-            id={todo.id}
-            style={{ background: todo.completed ? 'linear-gradient(90deg, rgba(0,200,219,1) 0%, rgba(0,255,158,1) 100%)' : ''}}> 
-
-            <i  onClick={ () => {props.finish(todo)} } 
-                className="right material-icons">check</i>
-
-            <i  onClick={ () => {props.deleteTodo(todo.id)} }
-                className="left material-icons">close</i>
-
-            <span>{todo.content}</span> </div>)})) 
-
-    : (<p className='noThings'>No things left...</p>)
-
-return (
-    <div className='todos collection'>
-        {todoList}
-    </div>
-    )
+            <Text>{todo.content}</Text>
+            <Icon right>
+              <MdDone onClick={() => markCompleted(todo)} />
+            </Icon>
+          </Item>
+        ))}
+      </ListWrap>
+    );
+  } else {
+    return <P2>No things left...</P2>;
+  }
 }
 
-export default Todos;
+//styles
+
+const gradient = `linear-gradient(
+  90deg,
+  rgba(0, 200, 219, 1) 0%,
+  rgba(0, 255, 158, 1) 100%
+)`;
+
+const Item = styled.div`
+  padding: 10px;
+  border: 1px solid black;
+  background: ${({ completed }) => (completed ? gradient : null)};
+  text-align: center;
+`;
+
+const ListWrap = styled.div`
+  border: none;
+  max-width: 500px;
+  max-height: 65vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+`;
+
+const P2 = styled.p`
+  height: 42px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  padding: 10px;
+  opacity: 0.25;
+`;
+
+const Icon = styled.div`
+  padding: 0 6px;
+  font-size: 1.2rem;
+  float: ${({ left }) => (left ? "left" : "right")};
+`;
+
+const Text = styled.p`
+  width: 80%;
+  margin: 0 auto;
+  display: inline-block;
+  word-wrap: break-word;
+  font-size: 1rem;
+`;
