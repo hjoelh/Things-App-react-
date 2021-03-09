@@ -1,20 +1,35 @@
 import React from "react";
 import styled from "styled-components";
 import { MdClose, MdDone } from "react-icons/md";
+import Reward from "react-rewards";
 
 export default function Todos({ todos, markCompleted, deleteTodo }) {
+  const confetti = React.useRef({});
+
+  const onComplete = async(todo) => {
+    const { key } = todo;
+    await markCompleted(todo);
+    if (!todo.completed) confetti.current[key].rewardMe();
+  };
+
   if (todos.length >= 1) {
     return (
       <ListWrap>
         {todos.map((todo) => (
-          <Item key={todo.key} id={todo.id} completed={todo.completed}>
+          <Item key={todo.key} completed={todo.completed}>
             <Icon left>
               <MdClose onClick={() => deleteTodo(todo.key)} />
             </Icon>
 
             <Text>{todo.content}</Text>
+
             <Icon right>
-              <MdDone onClick={() => markCompleted(todo)} />
+              <Reward
+                ref={(ref) => (confetti.current[todo.key] = ref)}
+                type="confetti"
+              >
+                <MdDone onClick={() => onComplete(todo)} />
+              </Reward>
             </Icon>
           </Item>
         ))}
